@@ -1,2 +1,2 @@
 # File-Organizer
-GUI application for reorganizing your folders by file extensions!
+GUI application for organizing your folders by file extensions!
