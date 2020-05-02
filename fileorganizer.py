@@ -127,5 +127,12 @@ class FileOrganizer(Tk):
         self.quit_btn = ttk.Button(self, text="Quit", command=self.quit_app)
         self.quit_btn.grid(column=0, row=8, padx=10, sticky=W)
 
-application = FileOrganizer()
-application.mainloop()
+if __name__ == "__main__":
+    try:
+        application = FileOrganizer()
+        application.mainloop()
+    except TclError:
+        os.environ.__setitem__('DISPLAY', ':0.0')
+    finally:    
+        application = FileOrganizer()
+        application.mainloop()
