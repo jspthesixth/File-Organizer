@@ -12,6 +12,8 @@ Setting DPI awareness mode to support DPI scaling.
 Long story short, to remove blury text from GUI on high resolution displays.
 
 ctypes.windll.shcore.SetProcessDpiAwareness(1)
+
+Include the line above, line 14 and import 'ctypes' library, line 3
 """
 
 class FileOrganizer(Tk):
@@ -19,7 +21,8 @@ class FileOrganizer(Tk):
         super().__init__()
         self.geometry("310x380")
         self.title("FileOrganizer")
-        self.wm_iconbitmap("icon.ico")
+        # self.wm_iconbitmap("icon.ico")
+        # uncomment the line above if you are a Windows user
 
 
         self.label1_frame = ttk.LabelFrame(self, text="Select folder:")
