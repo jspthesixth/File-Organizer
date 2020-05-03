@@ -21,10 +21,7 @@ class FileOrganizer(Tk):
         super().__init__()
         self.geometry("310x380")
         self.title("FileOrganizer")
-        # self.wm_iconbitmap("icon.ico")
-        # uncomment the line above if you are a Windows user
-
-
+        
         self.label1_frame = ttk.LabelFrame(self, text="Select folder:")
         self.label1_frame.grid(column=0, row=0, padx=10, pady=10, sticky=W)
         self.label2_frame = ttk.LabelFrame(self, text="Select destination folder:")
@@ -135,7 +132,8 @@ if __name__ == "__main__":
         application = FileOrganizer()
         application.mainloop()
     except TclError:
-        os.environ.__setitem__('DISPLAY', ':0.0')
+        if os.environ.get("DISPLAY", "") == "":
+            os.environ.__setitem__("DISPLAY", ":0.0")
     finally:    
         application = FileOrganizer()
         application.mainloop()
