@@ -131,6 +131,5 @@ if __name__ == "__main__":
     except TclError:
         if os.environ.get("DISPLAY", "") == "":
             os.environ.__setitem__("DISPLAY", ":1.0")
-        
         application = FileOrganizer()
         application.mainloop()
