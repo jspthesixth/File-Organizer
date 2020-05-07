@@ -7,19 +7,16 @@ from tkinter import filedialog
 from tkinter import messagebox
 
 """OS: Windows
-
 Setting DPI awareness mode to support DPI scaling.
 Long story short, to remove blury text from GUI on high resolution displays.
-
 ctypes.windll.shcore.SetProcessDpiAwareness(1)
-
 Include the line above, line 14 and import 'ctypes' library, line 3
 """
 
 class FileOrganizer(Tk):
     def __init__(self):
         super().__init__()
-        self.geometry("310x380")
+        self.geometry("400x400")
         self.title("FileOrganizer")
         
         self.label1_frame = ttk.LabelFrame(self, text="Select folder:")
@@ -133,5 +130,7 @@ if __name__ == "__main__":
         application.mainloop()
     except TclError:
         if os.environ.get("DISPLAY", "") == "":
-            os.environ.__setitem__("DISPLAY", ":0.0")
+            os.environ.__setitem__("DISPLAY", ":1.0")
+        
+        application = FileOrganizer()
         application.mainloop()
